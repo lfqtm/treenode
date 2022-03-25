@@ -2,10 +2,16 @@
   "name": "treenode",
   "version": "0.1.0",
   "private": true,
+  "homepage": "./",
+  "main": "main.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
     "@testing-library/user-event": "^13.5.0",
+    "classnames": "^2.3.1",
+    "electron": "^17.2.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.2.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -15,7 +21,10 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "electron-dev": "electron . dev",
+    "electron": "electron .",
+    "package":"electron-packager . HelloWorld --platform=win32 --arch=x64 --icon=./public/favicon.ico --out=./out --asar --app-version=0.0.1 --overwrite --ignore=node_modules"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +43,17 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "electron-builder": "^22.14.13"
+  },
+  "build": {
+    "appId": "com.electron.electron-with-create-react-app",
+    "win": {
+      "iconUrl": "https://cdn2.iconfinder.com/data/icons/designer-skills/128/react-256.png"
+    },
+    "directories": {
+      "buildResources": "public"
+    }
   }
 }
